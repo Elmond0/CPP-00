@@ -6,7 +6,7 @@
 /*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/27 12:20:19 by elmondo           #+#    #+#             */
-/*   Updated: 2026/03/28 11:56:50 by elmondo          ###   ########.fr       */
+/*   Updated: 2026/03/28 12:29:42 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,39 @@ std::string getInput(std::string prompt)
 	}
 }
 
+std::string getInputNum(std::string prompt)
+{
+	std::string input;
+
+	while (1)
+	{
+		std::cout << prompt;
+		if (!std::getline(std::cin, input))
+		{
+			std::cout << std::endl;
+			std::cout << "Leaving the PhoneBook" << std::endl;
+			exit(0);
+		}
+		bool valid = true; 
+		if (input.empty())
+		{
+			std::cout << "Field cannot be empty!" << std::endl;
+			valid = false;
+		}
+		for (size_t i = 0; i < input.length(); i++)
+		{
+			if (!std::isdigit(input[i]))
+			{
+				std::cout << "Invalid Phone Number: only digits are allowed." << std::endl;
+				valid = false;
+				break;
+			}
+		}
+		if (valid)
+			return input;
+	}
+}
+
 void handleAdd(PhoneBook &PhoneBook)
 {
 	Contact Contact;
@@ -42,7 +75,7 @@ void handleAdd(PhoneBook &PhoneBook)
 	Contact.setFirstName(getInput("First Name: "));
 	Contact.setLastName(getInput("Last Name: "));
 	Contact.setNickName(getInput("Nickname: "));
-	Contact.setPhoneNumber(getInput("Phone Number: "));
+	Contact.setPhoneNumber(getInputNum("Phone Number: "));
 	Contact.setDarkestSecret(getInput("Darkest Secret: "));
 
 	PhoneBook.addContact(Contact);
