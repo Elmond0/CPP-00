@@ -6,7 +6,7 @@
 /*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/27 12:20:19 by elmondo           #+#    #+#             */
-/*   Updated: 2026/03/27 19:02:31 by elmondo          ###   ########.fr       */
+/*   Updated: 2026/03/28 11:56:50 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ std::string getInput(std::string prompt)
 		if(!std::getline(std::cin, input))
 		{
 			std::cout << std::endl;
+			std::cout << "Leaving the PhoneBook" << std::endl;
 			exit(0);
 		}
 		if(!input.empty())
