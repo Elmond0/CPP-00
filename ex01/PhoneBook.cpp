@@ -6,7 +6,7 @@
 /*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/27 14:38:09 by elmondo           #+#    #+#             */
-/*   Updated: 2026/03/27 19:08:00 by elmondo          ###   ########.fr       */
+/*   Updated: 2026/03/28 11:52:56 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void PhoneBook::displayContacts() const
 	std::cout << "|" << std::setw(10) << "Index" << "|";
 	std::cout << std::setw(10) << "First Name" << "|";
 	std::cout << std::setw(10) << "Last Name" << "|";
-	std::cout << std::setw(10) << "NicknameName" << "|" << std::endl;
+	std::cout << std::setw(10) << "NickName" << "|" << std::endl;
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
 	
 	for (int i = 0; i < this->_contactCount; i++)
